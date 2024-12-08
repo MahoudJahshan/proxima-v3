@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 2rem 0;
+    }
+
+    .category img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .category {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .category:hover {
+      transform: scale(1.03);
+    }
+
+    .category h2 {
+      font-size: 1.2rem;
+      margin: 0.5rem;
+    }
+
+    .category p {
+      font-size: 0.9rem;
+      color: #ff5722;
+      margin: 0 0.5rem 1rem 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="categories" class="categories"></section>
+  </main>
+  <script>
+    // بيانات الفئات
+    const categories = [
+      { id: 'aerial', name: 'Aerial Work Platforms', img: '/1.jpg' },
+      { id: 'earthmoving', name: 'Earthmoving', img: '/2.jpg' },
+      { id: 'material-handling', name: 'Material Handling', img: '/3.jpg' },
+      { id: 'power', name: 'Power Solutions', img: '/4.jpg' },
+      { id: 'compaction', name: 'Compaction', img: '/5.jpg' },
+    ];
+
+    // عرض الفئات ديناميكيًا
+    const categoriesContainer = document.getElementById('categories');
+    categories.forEach(category => {
+      const categoryElement = document.createElement('div');
+      categoryElement.className = 'category';
+      categoryElement.innerHTML = `
+        <img src="${category.img}" alt="${category.name}">
+        <h2>${category.name}</h2>
+        <p>Core Solutions</p>
+      `;
+      categoryElement.onclick = () => {
+        // الانتقال إلى صفحة المعدات مع تمرير معرف الفئة
+        window.location.href = `equipment.html?category=${category.id}`;
+      };
+      categoriesContainer.appendChild(categoryElement);
+    });
+  </script>
+</body>
+</html>

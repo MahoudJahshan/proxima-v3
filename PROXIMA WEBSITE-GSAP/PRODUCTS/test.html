@@ -1,0 +1,322 @@
+
+
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Equipment Details</title>
+      <link rel="stylesheet" href="styles.css">
+
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f8f9fa;
+        }
+        
+        .container {
+          max-width: 1500px;
+          margin: 2rem auto;
+          padding: 2rem;
+          background-color: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          display: flex;
+          gap: 2rem;
+          flex-wrap: wrap;
+        }
+        
+        .image-section img {
+          width: 100%;
+          max-width: 400px;
+          height: auto;
+          border-radius: 8px;
+          border: 1px solid #ddd;
+        }
+        
+        .details-section {
+          flex: 1;
+        }
+        
+        .details-section h1 {
+          font-size: 2rem;
+          color: #333;
+          margin-bottom: 0.5rem;
+        }
+        
+        .pricing {
+          font-size: 1.2rem;
+          color: gray;
+          margin-bottom: 1rem;
+        }
+        
+        .pricing span {
+          font-weight: bold;
+          color: #ff5722;
+        }
+        
+        .add-to-cart {
+          background-color: #ff5722;
+          color: white;
+          border: none;
+          padding: 0.75rem 1.5rem;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-top: 1rem;
+        }
+        
+        .equipment-description {
+          margin-top: 1.5rem;
+          font-size: 1.1rem;
+          color: #555;
+          line-height: 1.5;
+        }
+        
+        .equipment-specs {
+          margin-top: 1.5rem;
+          font-size: 1rem;
+          color: #333;
+        }
+        
+        .equipment-specs h3 {
+          font-size: 1.5rem;
+          color: #333;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+        
+        .specs-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 1rem;
+        }
+        
+        .specs-table th,
+        .specs-table td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+        }
+        
+        .specs-table th {
+          background-color: #f4f4f4;
+          font-weight: bold;
+          color: #555;
+        }
+        
+        .specs-table tr:nth-child(even) {
+          background-color: #f9f9f9;
+        }
+        
+        .specs-table tr:hover {
+          background-color: #f1f1f1;
+        }
+        
+        @media (max-width: 768px) {
+          .container {
+            flex-direction: column;
+          }
+        }
+        
+        .overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+          z-index: 999;
+        }
+        
+        .modal {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #fff;
+          padding: 2rem;
+          border-radius: 8px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          z-index: 1000;
+          max-width: 400px;
+          width: 100%;
+          animation: modalIn 0.3s ease-in-out;
+        }
+        
+        @keyframes modalIn {
+          0% {
+            transform: translate(-50%, -60%);
+            opacity: 0;
+          }
+          100% {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+          }
+        }
+        
+        .modal-header {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+        
+        .modal-body {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .modal-body p {
+          display: flex;
+          justify-content: space-between;
+          margin: 0.5rem 0;
+        }
+        
+        .date-inputs {
+          display: flex;
+          justify-content: space-between;
+        }
+        
+        .date-inputs p {
+          flex: 1;
+        }
+        
+        .modal-body input {
+          flex: 1;
+          margin-left: 1rem;
+        }
+        
+        .modal-footer {
+          text-align: center;
+        }
+        
+        .modal-footer button {
+          padding: 0.75rem 1.5rem;
+          background-color: #ff5722;
+          color: white;
+          border: none;
+          cursor: pointer;
+          border-radius: 4px;
+          transition: background-color 0.3s;
+        }
+        
+        .modal-footer button:hover {
+          background-color: #e64a19;
+        }
+        
+        </style>
+
+
+    </head>
+    <body>
+      <div class="container">
+        <div class="image-section">
+          <img id="equipment-image" src="" alt="Equipment Image">
+        </div>
+        <div class="details-section">
+          <h1 id="equipment-title">Equipment Name</h1>
+          <p class="pricing">
+            <span id="price-day">$/day</span> | 
+            <span id="price-week">$/week</span> | 
+            <span id="price-month">$/4-week</span>
+          </p>
+          <button class="add-to-cart">Add to Cart</button>
+          
+          <div class="equipment-description" id="equipment-description">
+            Equipment details will go here.
+          </div>
+    
+          <div class="equipment-specs">
+            <h3>Additional Specs</h3>
+            <table class="specs-table" id="specs-table">
+              <thead>
+                <tr>
+                  <th>Specification</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Modal -->
+      <div class="overlay"></div>
+      <div class="modal">
+        <div class="modal-header">Equipment Details</div>
+        <div class="modal-body">
+          <p><strong>Equipment:</strong> <span id="modal-equipment-name"></span></p>
+          <div class="date-inputs">
+            <p><strong>Start Date:</strong> <input type="date" id="start-date"></p>
+            <p><strong>End Date:</strong> <input type="date" id="end-date"></p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="confirm-rental">Confirm Rental</button>
+        </div>
+      </div>
+    
+      <script src="script.js"></script>
+    </body>
+    </html>
+    
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const addToCartButton = document.querySelector('.add-to-cart');
+  const modal = document.querySelector('.modal');
+  const overlay = document.querySelector('.overlay');
+  const confirmButton = document.querySelector('#confirm-rental');
+
+  const equipment = {
+    name: 'Electric Scissor Lift, 10\' - 12\'',
+    description: 'This scissor lift offers a working height of 10 to 12 feet, perfect for tight indoor spaces. It provides safety, stability, and quiet operation for construction, maintenance, or installation tasks.',
+    price: { day: "$50", week: "$300", month: "$1000" },
+    specs: {
+      "Equipment Make": "MEC",
+      "Model Number": "45-AJ",
+      "Horizontal Reach": ["10 ft", "15 ft", "20 ft"],
+      "Serial Number": "43453345-AJ"
+    }
+  };
+
+  addToCartButton.addEventListener('click', function() {
+    document.querySelector('.overlay').style.display = 'block';
+    modal.style.display = 'block';
+    document.querySelector('#modal-equipment-name').textContent = equipment.name;
+    // Reset dates
+    document.querySelector('#start-date').value = '';
+    document.querySelector('#end-date').value = '';
+  });
+
+  overlay.addEventListener('click', function() {
+    modal.style.display = 'none';
+    overlay.style.display = 'none';
+  });
+
+  confirmButton.addEventListener('click', function() {
+    const startDate = document.querySelector('#start-date').value;
+    const endDate = document.querySelector('#end-date').value;
+
+    if (startDate && endDate) {
+      alert(`Rental Confirmed for ${equipment.name} from ${startDate} to ${endDate}`);
+      modal.style.display = 'none';
+      overlay.style.display = 'none';
+    } else {
+      alert('Please select both start and end dates.');
+    }
+  });
+});
+
+  </script>
+</body>
+</html>

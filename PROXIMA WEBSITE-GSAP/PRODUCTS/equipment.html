@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="">
+  <title>Equipment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px; /* Maximum container width */
+      margin: 0 auto; /* Center the container */
+      padding: 0 1rem; /* Add horizontal padding for small screens */
+    }
+
+    .category-title {
+      text-align: left; /* Align the title with the containers */
+      margin-top: 2rem;
+      margin-bottom: 0.5rem; /* Space between the title and subtitle */
+      font-size: 2.5rem; /* Bigger font size for the main title */
+      color: #ff5722;
+    }
+
+    .category-subtitle {
+      text-align: left; /* Align subtitle with title */
+      margin-bottom: 1.5rem; /* Space between subtitle and cards */
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    .equipment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .equipment {
+      display: flex;
+      align-items: center;
+      gap: 2rem; /* Spacing between elements */
+      padding: 2rem; /* Padding inside each card */
+      background: #ffffff;
+      border-radius: 12px; /* Slightly rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .equipment-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .equipment-details {
+      flex-grow: 1;
+    }
+
+    .equipment-details h3 {
+      font-size: 0.9rem; /* Smaller font size for category name */
+      margin: 0;
+      color: #666; /* Subtle gray color */
+    }
+
+    .equipment-details h2 {
+      font-size: 1.5rem; /* Larger font size for the equipment name */
+      margin: 0.2rem 0; /* Space between category and equipment name */
+      color: #ff5722;
+    }
+
+    .price {
+      font-size: 1.2rem; /* Larger font size for price */
+      margin: 0.5rem 0 0;
+      color: #666;
+    }
+
+    .add-to-cart {
+      background-color: #ff5722;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem; /* Bigger button */
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .add-to-cart:hover {
+      background-color: #e64a19;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .equipment {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        text-align: left;
+      }
+
+      .equipment-img {
+        width: 100%; /* Full width for smaller screens */
+        height: auto;
+      }
+
+      .equipment-details h2 {
+        font-size: 1.3rem; /* Slightly smaller for mobile */
+      }
+
+      .price {
+        font-size: 1rem; /* Adjusted price font size */
+      }
+
+      .add-to-cart {
+        width: 100%; /* Full-width button for smaller screens */
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1 id="category-title" class="category-title"></h1>
+    <p id="category-subtitle" class="category-subtitle"></p>
+    <section id="equipment-list" class="equipment-list"></section>
+  </main>
+  <script>
+    const data = {
+      aerial: {
+        title: 'Aerial Work Platforms',
+        subtitle: 'Explore a wide range of platforms for high-reach tasks.',
+        equipments: [
+          { name: "Electric Scissor Lift, 10' - 12'", img: '/1.jpg', price: { day: '$50', week: '$200', month: '$600' } },
+          { name: "Electric Scissor Lift, 13' - 14'", img: '/2.jpg', price: { day: '$60', week: '$240', month: '$720' } },
+          { name: "Electric Scissor Lift, 19' Micro", img: '/3.jpg', price: { day: '$70', week: '$280', month: '$840' } },
+        ]
+      },
+      earthmoving: {
+        title: 'Earthmoving Equipment',
+        subtitle: 'Find the best tools for excavation and construction.',
+        equipments: [
+          { name: "Excavator, Small", img: '/4.jpg', price: { day: '$100', week: '$400', month: '$1200' } },
+          { name: "Excavator, Medium", img: '/5.jpg', price: { day: '$150', week: '$600', month: '$1800' } },
+        ]
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const categoryId = params.get('category');
+
+    const categoryData = data[categoryId];
+    if (categoryData) {
+      document.getElementById('category-title').textContent = categoryData.title;
+      document.getElementById('category-subtitle').textContent = categoryData.subtitle;
+      const equipmentList = document.getElementById('equipment-list');
+      categoryData.equipments.forEach((equipment, index) => {
+        const equipmentElement = document.createElement('div');
+        equipmentElement.className = 'equipment';
+        equipmentElement.innerHTML = `
+          <img src="${equipment.img}" alt="${equipment.name}" class="equipment-img">
+          <div class="equipment-details">
+            <h3>${categoryData.title}</h3> <!-- Category name -->
+            <h2>${equipment.name}</h2> <!-- Equipment name -->
+            <p class="price">${equipment.price.day} / day • ${equipment.price.week} / week • ${equipment.price.month} / 4-week</p>
+          </div>
+          <button class="add-to-cart">Add to Cart</button>
+        `;
+        equipmentElement.onclick = () => {
+          window.location.href = `equipment-details.html?id=${index}&category=${categoryId}`;
+        };
+        equipmentList.appendChild(equipmentElement);
+      });
+    } else {
+      document.getElementById('category-title').textContent = 'Category Not Found';
+    }
+  </script>
+</body>
+</html>

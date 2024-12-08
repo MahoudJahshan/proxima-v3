@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+        <!--smoth scrolling-->
+        <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+        <!--GSAP-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <!--AOS-->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="brain.css">
+    
+    <title>Document</title>
+</head>
+<body class="">
+    <nav class="fixed top-0 left-0 w-full z-10 mt-8">
+        <div class="container mx-auto px-4 flex justify-between items-center py-3">
+          <!-- Logo -->
+          <div class="text-xl font-bold">
+            <a href="#" class="text-white">PROXIMA</a>
+          </div>
+    
+          <!-- Navigation Links for Desktop -->
+          <div class="hidden md:flex space-x-6 blurred-section px-6 py-2 rounded-full drop-shadow-md">
+            <a href="#" class="text-gray-300 hover:text-white">Home</a>
+            <a href="#" class="text-gray-300 hover:text-white">Solutions</a>
+            <a href="#" class="text-gray-300 hover:text-white">Platform</a>
+            <a href="#" class="text-gray-300 hover:text-white">Customers</a>
+            <a href="#" class="text-gray-300 hover:text-white">Pricing</a>
+            <a href="#" class="text-gray-300 hover:text-white">Explore</a>
+          </div>
+    
+          <!-- Buttons for Desktop -->
+          <div class="hidden md:flex items-center space-x-4">
+            <a href="#" class="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700">Request a demo</a>
+          </div>
+    
+          <!-- Hamburger Menu (Mobile) -->
+          <button
+            id="menu-toggle"
+            class="md:hidden text-white focus:outline-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+    
+        <!-- Navigation Links for Mobile -->
+        <div
+          id="nav-links"
+          class="hidden md:hidden space-y-4 px-6 py-4 blurred-section absolute top-16 right-4 w-3/4 bg-gray-900 rounded-lg"
+        >
+          <a href="#" class="block text-gray-300 hover:text-white">Home</a>
+          <a href="#" class="block text-gray-300 hover:text-white">Solutions</a>
+          <a href="#" class="block text-gray-300 hover:text-white">Platform</a>
+          <a href="#" class="block text-gray-300 hover:text-white">Customers</a>
+          <a href="#" class="block text-gray-300 hover:text-white">Pricing</a>
+          <a href="#" class="block text-gray-300 hover:text-white">Explore</a>
+        </div>
+      </nav>
+
+
+
+
+
+  <!-- Hero Section -->
+  <section
+    id="hero-section" class="hero-section relative bg-cover bg-center h-[100vh] flex items-center  bg-white" style="background-image: url('1.jpg');" >
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-6xl px-6 md:px-16 lg:px-32 text-left">
+      <h1 class="text-3xl md:text-8xl lg:text-7xl font-bold mb-6 text-white leading-tight"data-aos="fade-right">
+        DISCOVER OUR HEAVY<br>
+        INDUSTRY EQUIPMENT<br>
+        FOR SALE & RENT
+      </h1>
+      <p class="text-sm md:text-lg lg:text-xl mb-6 text-white leading-relaxed" data-aos="fade-right">
+        High-performance equipment for your project needs. Our inventory includes top machinery for construction,
+        mining, and more. Trust us for precision and reliability.
+      </p>
+      <div class="space-x-4 mt-10"data-aos="fade-right">
+        <a href="#"
+           class="bg-yellow-500 text-black px-4 md:px-6 py-2 md:py-3 rounded font-bold hover:bg-yellow-600 text-sm md:text-base">
+          View Products
+        </a>
+        <a href="#"
+           class="bg-gray-800 text-white px-4 md:px-6 py-2 md:py-3 rounded font-bold hover:bg-gray-700 text-sm md:text-base">
+          Get quotes for free
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+<!--clients-->
+  <div class="bg-white py-24 sm:py-32"data-aos="fade-up">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <h2 class="text-center text-lg/8 font-semibold text-gray-900">Trusted by the world’s most innovative teams</h2>
+      <div class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" src="https://tailwindui.com/plus/img/logos/158x48/transistor-logo-gray-900.svg" alt="Transistor" width="158" height="48">
+        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" src="https://tailwindui.com/plus/img/logos/158x48/reform-logo-gray-900.svg" alt="Reform" width="158" height="48">
+        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" src="https://tailwindui.com/plus/img/logos/158x48/tuple-logo-gray-900.svg" alt="Tuple" width="158" height="48">
+        <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1" src="https://tailwindui.com/plus/img/logos/158x48/savvycal-logo-gray-900.svg" alt="SavvyCal" width="158" height="48">
+        <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1" src="https://tailwindui.com/plus/img/logos/158x48/statamic-logo-gray-900.svg" alt="Statamic" width="158" height="48">
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+  <main>
+    <div class="brain-container">
+        <!-- Section 1 -->
+        <div class="brain-content-wrapper brain-first-section">
+            <div class="brain-image-section">
+                <img src="1.jpg" alt="Brain Illustration" class="brain-image">
+            </div>
+            <div class="brain-text-section">
+                <h1 class="brain-title">Creating a new breed of Human AI</h1>
+                <p class="brain-description">
+                    We have designed Brain Data collection and analysis tools to incorporate the Human element into AI-based technologies.
+                </p>
+                <p class="brain-sub-description">
+                    This new breed of <span class="brain-highlight">Human AI</span> presents opportunities for innovation across industries and designs solutions based on the human mind.
+                </p>
+                <button class="brain-cta-button">Explore our solutions</button>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="brain-content-wrapper brain-second-section">
+            <div class="brain-text-section">
+                <h1 class="brain-title">Transforming the Future of AI</h1>
+                <p class="brain-description">
+                    By integrating brain data, we ensure a human-centered approach to AI, making it more ethical, empathetic, and efficient.
+                </p>
+                <p class="brain-sub-description">
+                    Our solutions revolutionize how industries interact with AI, creating smarter, more adaptive technologies.
+                </p>
+                <button class="brain-cta-button">Learn More</button>
+            </div>
+            <div class="brain-image-section">
+                <img src="2.jpg" alt="AI Illustration" class="brain-image">
+            </div>
+        </div>
+    </div>
+
+    <div class="brain-container">
+      <!-- Section 1 -->
+      <div class="brain-content-wrapper brain-first-section">
+          <div class="brain-image-section">
+              <img src="1.jpg" alt="Brain Illustration" class="brain-image">
+          </div>
+          <div class="brain-text-section">
+              <h1 class="brain-title">Creating a new breed of Human AI</h1>
+              <p class="brain-description">
+                  We have designed Brain Data collection and analysis tools to incorporate the Human element into AI-based technologies.
+              </p>
+              <p class="brain-sub-description">
+                  This new breed of <span class="brain-highlight">Human AI</span> presents opportunities for innovation across industries and designs solutions based on the human mind.
+              </p>
+              <button class="brain-cta-button">Explore our solutions</button>
+          </div>
+      </div>
+  </div>
+  
+</main>
+
+
+
+
+  
+
+
+
+
+
+
+
+<!--horizaaaaantalllllllll scrolling-->
+
+<div class="horizontal-container">
+  <div class="scroll-content">
+    <!-- Text Section -->
+    <div class="text-section">
+      <h1>Introducing The First Ever Brain-Data-as-a-Service Platform</h1>
+      <p>
+        Brain-Data-as-a-Service supercharges the value of brain data, building a shared big data library
+        that can be leveraged for the value of all participants, while keeping research data anonymous and private.
+      </p>
+      <button>
+        Get in Touch
+      </button>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="card">
+      <img src="1.jpg" alt="Brain Sensei">
+      <h2>The Brain Sensei™</h2>
+      <p>Proprietary hardware: automated process non-invasively and accurately collects brain data with the click of a button.</p>
+    </div>
+    <div class="card">
+      <img src="2.jpg" alt="Brain Cloud">
+      <h2>Brain Cloud</h2>
+      <p>Brain data is de-noised, standardized, and automatically tagged by machine learning models.</p>
+    </div>
+    <div class="card">
+      <img src="3.jpg" alt="Brain Analytics">
+      <h2>Brain Analytics</h2>
+      <p>Actionable insights for neuroscience research, accelerating innovation and discovery.</p>
+    </div>
+    <div class="card">
+      <img src="4.jpg" alt="Neural Tools">
+      <h2>Neural Tools</h2>
+      <p>Unlocking the potential of brain data for research and clinical applications worldwide.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="bg-white flex flex-col items-center  px-6 mt-52 ">
+  <!-- Section Title -->
+  <div class="text-center mb-10 max-w-3xl">
+    <h2 class="text-orange-500 text-3xl sm:text-4xl md:text-4xl font-bold">
+      In the heart of Silicon Valley.
+    </h2>
+    <p class="text-gray-400 text-base sm:text-base mt-2">
+      Just minutes from SFO, our flagship clinic sets a new standard for personalized care and comfort.
+    </p>
+  </div>
+  </div>
+
+  <div class="bg-white flex flex-col items-center  px-6 mt-20">
+  <!-- Facts Grid -->
+  <div id="facts" class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-[1000px] ">
+    <!-- Card 1 -->
+    <div class="bg-gray-600 rounded-2xl h-72 relative duration-300 hover:bg-orange-500"data-aos="fade-down-left">
+      <span class="absolute top-6 left-6 text-white text-5xl md:text-7xl font-bold">900+</span>
+      <span class="absolute bottom-6 left-6 text-white text-xl md:text-2xl">different types <br> of equipment</span>
+    </div>
+    <!-- Card 2 -->
+    <div class="bg-gray-600 rounded-2xl h-72 relative duration-300 hover:bg-orange-500"data-aos="fade-down-left">
+      <span class="absolute top-6 left-6 text-white text-5xl md:text-7xl font-bold">20+</span>
+      <span class="absolute bottom-6 left-6 text-white text-xl md:text-2xl">Years of <br> Experience</span>
+    </div>
+    <!-- Card 3 -->
+    <div class="bg-gray-600 rounded-2xl h-72 relative duration-300 hover:bg-orange-500"data-aos="fade-up-right">
+      <span class="absolute top-6 left-6 text-white text-5xl md:text-7xl font-bold">35+</span>
+      <span class="absolute bottom-6 left-6 text-white text-xl md:text-2xl">years of <br> experience</span>
+    </div>
+    <!-- Card 4 -->
+    <div class="bg-gray-600 rounded-2xl h-72 relative duration-300 hover:bg-orange-500"data-aos="fade-up-right">
+      <span class="absolute top-6 left-6 text-white text-5xl md:text-7xl font-bold">35+</span>
+      <span class="absolute bottom-6 left-6 text-white text-xl md:text-2xl">satisfied <br> clients</span>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="p-3">
+  <!-- Section -->
+  <div class="bg-white flex flex-col items-center px-6 mt-56">
+    <!-- Section Title -->
+    <div class="text-center mb-10 max-w-3xl">
+      <h2 class="text-orange-500 text-3xl sm:text-4xl md:text-4xl font-bold">
+        In the heart of Silicon Valley.
+      </h2>
+      <p class="text-gray-400 text-base sm:text-base mt-2">
+        Just minutes from SFO, our flagship clinic sets a new standard for personalized care and comfort.
+      </p>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="p-4 relative bg-cover bg-center bg-white w-full max-w-[1200px] h-[500px] mx-auto my-10 px-6 sm:px-10 md:px-14 lg:px-20 flex items-center justify-center rounded-3xl"
+    style="background-image: url('4.jpg');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black opacity-30 rounded-3xl"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">
+        An ecosystem built for <span class="text-orange-500">customer action</span>
+      </h1>
+      <p class="text-base sm:text-lg mb-4 sm:mb-6">
+        Planhat is a customer platform that doubles as both your single source of truth and an everyday
+        customer-centric control center for your sales, service, and success teams.
+      </p>
+      <a href="#"
+        class="btn-hover-circle text-white border border-zinc-400 rounded-full px-4 py-3 text-lg transition duration-300 hover:backdrop-blur-md hover:bg-white hover:bg-opacity-30">
+        Request a demo
+        <span class="arrow-wrapper ml-5">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Cards Section -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1200px] mx-auto my-10">
+    <!-- Left Card -->
+    <div class="relative h-[600px] bg-black text-white rounded-3xl overflow-hidden">
+      <!-- Background Image -->
+      <img src="1.jpg" alt="Background" class="absolute inset-0 w-full h-full object-cover opacity-50">
+      <!-- Content -->
+      <div class="relative z-10 p-8 flex flex-col justify-between h-full">
+        <div class="text-left">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">Enterprise-grade flexibility</h2>
+          <p class="text-lg sm:text-xl">
+            Data warehousing, ETL, automation and reporting put your customer at the new centre of gravity.
+          </p>
+        </div>
+        <div class="text-left">
+          <a href="#"
+             class="btn-hover-circle text-white border border-zinc-400 rounded-full px-4 py-3 text-lg transition duration-300 hover:backdrop-blur-md hover:bg-white hover:bg-opacity-30">
+            Discover
+            <span class="arrow-wrapper ml-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Card -->
+    <div class="relative h-[600px] bg-black text-white rounded-3xl overflow-hidden">
+      <!-- Background Image -->
+      <img src="2.jpg" alt="Background" class="absolute inset-0 w-full h-full object-cover opacity-50">
+      <!-- Content -->
+      <div class="relative z-10 p-8 flex flex-col justify-between h-full">
+        <div class="text-left">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">Consumer-ready usability</h2>
+          <p class="text-lg sm:text-xl">
+            An action-first interface, shortcuts, and complete-sentence formulas bring Scandi simplicity to CRM.
+          </p>
+        </div>
+        <div class="text-left">
+          <a href="#"
+             class="btn-hover-circle text-white border border-zinc-400 rounded-full px-4 py-3 text-lg transition duration-300 hover:backdrop-blur-md hover:bg-white hover:bg-opacity-30">
+            Request a demo
+            <span class="arrow-wrapper ml-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+                  <!-- FAQ -->
+                   
+                  <div class="max-w-7xl mx-auto py-16 px-4 mt-56">
+                    <div class="flex flex-col lg:flex-row">
+                        <!-- FAQ Container (Left Column) -->
+                        <div class="lg:w-1/2 lg:pr-8">
+                            <h1 class="text-4xl font-bold text-gray-900 mb-6">Frequently Asking Questions</h1>
+                            <p class="text-gray-600 mb-8">Find answers to some of the most common questions we receive from our customers. If you don't find what you're looking for, feel free to contact us directly.</p>
+                            <button class="bg-orange-500 text-white font-bold py-2 px-6 rounded-md hover:bg-orange-600">See More</button>
+                        </div>
+            
+                        <!-- Accordion Section (Right Column) -->
+                        <div class="lg:w-1/2 lg:pl-8 mt-8 lg:mt-0 space-y-4">
+                            <div class="faq-item border-t border-b border-gray-200 py-4">
+                                <div class="flex justify-between items-center cursor-pointer toggle">
+                                    <h2 class="text-lg font-semibold text-gray-800">What services do you offer?</h2>
+                                    <span class="text-orange-500">&#9650;</span> <!-- Up Arrow -->
+                                </div>
+                                <p class="mt-2 text-gray-600 content">
+                                    Whether you're looking to update a single room or undertake a major renovation, our skilled team will bring your vision to life with quality craftsmanship.
+                                </p>
+                            </div>
+                            
+                            <div class="faq-item border-t border-b border-gray-200 py-4">
+                                <div class="flex justify-between items-center cursor-pointer toggle">
+                                    <h2 class="text-lg font-semibold text-gray-800">How can I pay for the services?</h2>
+                                    <span class="text-gray-500">&#9660;</span> <!-- Down Arrow -->
+                                </div>
+                                <p class="mt-2 text-gray-600 content">
+                                    We accept various payment methods including credit cards, debit cards, and direct bank transfers.
+                                </p>
+                            </div>
+            
+                            <div class="faq-item border-t border-b border-gray-200 py-4">
+                                <div class="flex justify-between items-center cursor-pointer toggle">
+                                    <h2 class="text-lg font-semibold text-gray-800">What should I do to prepare for your visit?</h2>
+                                    <span class="text-gray-500">&#9660;</span> <!-- Down Arrow -->
+                                </div>
+                                <p class="mt-2 text-gray-600 content">
+                                    Please make sure the area is accessible and free of personal belongings. If there's anything specific we should know, feel free to inform us in advance.
+                                </p>
+                            </div>
+            
+                            <div class="faq-item border-t border-b border-gray-200 py-4">
+                                <div class="flex justify-between items-center cursor-pointer toggle">
+                                    <h2 class="text-lg font-semibold text-gray-800">Can I schedule recurring services?</h2>
+                                    <span class="text-gray-500">&#9660;</span> <!-- Down Arrow -->
+                                </div>
+                                <p class="mt-2 text-gray-600 content">
+                                    Yes, we offer recurring service options. Please contact us for scheduling and availability.
+                                </p>
+                            </div>
+            
+                            <div class="faq-item border-t border-b border-gray-200 py-4">
+                                <div class="flex justify-between items-center cursor-pointer toggle">
+                                    <h2 class="text-lg font-semibold text-gray-800">What is your cancellation policy?</h2>
+                                    <span class="text-gray-500">&#9660;</span> <!-- Down Arrow -->
+                                </div>
+                                <p class="mt-2 text-gray-600 content">
+                                    Cancellations must be made at least 24 hours in advance to avoid any charges. Please refer to our detailed cancellation policy on our website.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="isolate bg-white px-6 py-24 sm:py-24 lg:px-8">
+                  <div class="mx-auto max-w-2xl text-center">
+                  <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact sales</h2>
+                  <p class="mt-2 text-lg leading-8 text-gray-600">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
+                  </div>
+    </div>
+  
+  
+      <!-- Main Container -->
+      <div class=" flex items-center justify-center bg-white py-12 px-6 lg:px-8">
+          <div class="max-w-8xl flex flex-col md:flex-row bg-white shadow-lg rounded-lg">
+  
+              <!-- Map Section (70% Width) -->
+              <div class="w-full md:w-7/10 relative">
+                  <!-- World Map Image -->
+                  <img src="World Map.png" alt="World Map" class="w-full h-full object-cover rounded-l-lg">
+              
+              </div>
+  
+              <!-- Contact Form Section (30% Width) -->
+              <div class="w-full md:w-3/10 p-8">
+                  <h2 class="text-3xl font-bold text-gray-800 mb-4">Let's Get in Touch</h2>
+                  <p class="text-gray-500 mb-6">Lorem ipsum is simply dummy text.</p>
+  
+                  <!-- Contact Form -->
+                  <form action="#" method="POST" class="space-y-6">
+  
+                      <!-- Full Name -->
+                      <div>
+                          <label for="full-name" class="sr-only">Full name</label>
+                          <input type="text" id="full-name" name="full-name" placeholder="Full Name" class="block w-full px-4 py-3 rounded-md border border-gray-300 shadow-sm focus:ring-orange-500 focus:border-orange-500 text-gray-700" required>
+                      </div>
+  
+                      <!-- Email Address -->
+                      <div>
+                          <label for="email" class="sr-only">Email address</label>
+                          <input type="email" id="email" name="email" placeholder="Email Address" class="block w-full px-4 py-3 rounded-md border border-gray-300 shadow-sm focus:ring-orange-500 focus:border-orange-500 text-gray-700" required>
+                      </div>
+  
+                      <!-- Phone Number (Without Country Code) -->
+                      <div>
+                          <label for="phone" class="sr-only">Phone number</label>
+                          <input type="tel" id="phone" name="phone" placeholder="Phone Number" class="block w-full px-4 py-3 rounded-md border border-gray-300 shadow-sm focus:ring-orange-500 focus:border-orange-500 text-gray-700" required>
+                      </div>
+  
+                      <!-- Message -->
+                      <div>
+                          <label for="message" class="sr-only">Your Message</label>
+                          <textarea id="message" name="message" rows="4" placeholder="Your Message" class="block w-full px-4 py-3 rounded-md border border-gray-300 shadow-sm focus:ring-orange-500 focus:border-orange-500 text-gray-700"></textarea>
+                      </div>
+  
+                      <!-- Submit Button -->
+                      <button type="submit" class="w-full bg-orange-500 text-white py-3 px-4 rounded-md font-bold hover:bg-orange-500 focus:ring-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2">Send</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <footer class="bg-gray-800 text-white py-10">
+        <!-- Main Container -->
+        <div class="container mx-auto px-4 flex flex-wrap justify-between text-center md:text-left gap-10">
+          <!-- Navigation -->
+          <div class="w-full sm:w-1/2 md:w-1/3">
+            <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">Home</a></li>
+              <li><a href="#" class="hover:underline">Technology</a></li>
+              <li><a href="#" class="hover:underline">About</a></li>
+              <li><a href="#" class="hover:underline">Careers</a></li>
+              <li><a href="#" class="hover:underline">Contacts</a></li>
+            </ul>
+          </div>
+          <!-- Contacts -->
+          <div class="w-full sm:w-1/2 md:w-1/3">
+            <h3 class="text-lg font-semibold mb-4">Contacts</h3>
+            <p>+1 (814) 403-6708</p>
+            <p><a href="mailto:info@xyz.com" class="hover:underline">info@xyz.com</a></p>
+          </div>
+          <!-- Socials -->
+          <div class="w-full sm:w-1/2 md:w-1/3">
+            <h3 class="text-lg font-semibold mb-4">Socials</h3>
+            <p><a href="#" class="hover:underline">LinkedIn</a></p>
+          </div>
+        </div>
+      
+        <!-- PROXIMA Branding -->
+        <div class="text-center mt-10">
+          <h1
+            id="proximah1"
+            class="text-[5rem] sm:text-[8rem] md:text-[12rem] lg:text-[16rem] font-bold tracking-wide leading-none"
+          >
+            PROXIMA
+          </h1>
+        </div>
+      
+        <!-- Footer Bottom -->
+        <div class="container mx-auto mt-10 px-4 flex flex-wrap justify-between items-center">
+          <!-- Copyright Text -->
+          <div class="w-full md:w-auto text-center md:text-left">
+            <p>
+              Copyright © 2024, All Rights Reserved · <a href="#" class="hover:underline">Privacy and Cookie Policy</a>
+            </p>
+          </div>
+          <!-- Website By -->
+          <div class="w-full md:w-auto text-center md:text-right mt-4 md:mt-0">
+            <p>Website by <a href="#" class="hover:underline">Your Company</a></p>
+          </div>
+        </div>
+      </footer>
+      
+
+
+
+
+
+
+
+
+<!--smoth scrolling-->
+<script>
+  const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+  console.log(e)
+})
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+</script>
+
+
+
+<script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    // Toggle visibility and add animation for mobile menu
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("hidden");
+      if (!navLinks.classList.contains("hidden")) {
+        navLinks.classList.add("dropdown-enter");
+        setTimeout(() => {
+          navLinks.classList.remove("dropdown-enter");
+          navLinks.classList.add("dropdown-active");
+        }, 10); // Trigger animation
+      } else {
+        navLinks.classList.remove("dropdown-active");
+      }
+    });
+  </script>
+
+  <script>
+    // Shrink Hero Section on Scroll
+    const heroSection = document.getElementById('hero-section');
+    const initialHeight = heroSection.offsetHeight;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const shrinkFactor = Math.max(0.90, 1 - scrollY / 1000); // Shrink down to 95% of its size
+      heroSection.style.transform = `scale(${shrinkFactor})`;
+    });
+  </script>
+
+
+<script>
+    const logo = document.querySelector(".text-xl.font-bold a"); // Select the logo
+    const requestDemoButton = document.querySelector(".bg-orange-600"); // Select the Request a Demo button
+    const navLinksContainer = document.querySelector(".blurred-section"); // Select the middle nav links container
+    const navLinks1 = document.querySelectorAll(".blurred-section a"); // Select all links inside the middle nav
+  
+    // Create the new link but keep it hidden initially
+    const newLink = document.createElement("a");
+    newLink.href = "#";
+    newLink.textContent = "New Link";
+    newLink.classList.add(
+      "text-gray-800",
+      "hover:text-gray-600",
+      "hidden" // Initially hidden
+    );
+    navLinksContainer.appendChild(newLink); // Add the new link to the nav container
+  
+    // Add a scroll event listener
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+  
+      // Hide the logo and request demo button on scroll
+      if (scrollY > 50) {
+        logo.classList.add("hidden");
+        requestDemoButton.classList.add("hidden");
+        navLinksContainer.classList.add("bg-white", "text-black"); // Change background to white
+        navLinksContainer.classList.remove("blurred-section");
+        newLink.classList.remove("hidden"); // Show the new link
+  
+        // Change links to dark gray
+        navLinks1.forEach((link) => {
+          link.classList.remove("text-gray-300"); // Remove the light gray color
+          link.classList.add("text-gray-800", "hover:text-gray-600"); // Add dark gray color
+        });
+      } else {
+        logo.classList.remove("hidden");
+        requestDemoButton.classList.remove("hidden");
+        navLinksContainer.classList.remove("bg-white", "text-black");
+        navLinksContainer.classList.add("blurred-section");
+        newLink.classList.add("hidden"); // Hide the new link again
+  
+        // Revert links to their original light gray color
+        navLinks1.forEach((link) => {
+          link.classList.remove("text-gray-800", "hover:text-gray-600"); // Remove dark gray color
+          link.classList.add("text-gray-300", "hover:text-white"); // Add light gray color
+        });
+      }
+    });
+  </script>
+  
+  
+  <script>  // JavaScript to toggle accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+          item.classList.toggle('active');
+          
+          // Change arrow icon
+          const icon = item.querySelector('span');
+          if (item.classList.contains('active')) {
+              icon.innerHTML = '&#9650;'; // Up arrow
+          } else {
+              icon.innerHTML = '&#9660;'; // Down arrow
+          }
+      });
+    });
+    </script>
+
+
+
+<!--horizaaaaantalllllllll scrolling-->
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  
+  function initScrollTrigger() {
+  const scrollContent = document.querySelector(".scroll-content");
+  const scrollWidth = scrollContent.scrollWidth;
+  const windowWidth = window.innerWidth;
+  
+  // Reset existing ScrollTriggers
+  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  
+  if (windowWidth > 768) {
+    // Enable horizontal scrolling for larger screens
+    gsap.to(".scroll-content", {
+      x: () => -(scrollWidth - windowWidth),
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: ".horizontal-container",
+        start: "top top",
+        end: () => "+=" + (scrollWidth - windowWidth),
+        scrub: 1.5,
+        pin: true,
+      },
+    });
+  } else {
+    // For smaller screens, ensure vertical scrolling
+    gsap.set(".scroll-content", { x: 0 }); // Reset horizontal position
+    document.querySelector(".horizontal-container").style.height = "auto"; // Ensure full vertical height
+  }
+  }
+  
+  // Initialize on page load
+  initScrollTrigger();
+  
+  // Reinitialize on window resize
+  window.addEventListener("resize", initScrollTrigger);
+  
+  </script>
+
+
+<!--aos-->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+    offset: 300,
+    duration: 1400,
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+
+</body>
+</html>
